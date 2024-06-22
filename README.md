@@ -1,65 +1,103 @@
-Let me walk you through how to use this local cloud storage program step-by-step:
-
 ### Setup
 
 1. **Installation**:
    - First, ensure that you have Python installed on your system.
-   - Copy the provided code into a Python script file (e.g., `cloud_storage.py`).
+   - Copy the provided code into a Python script file (e.g., `database_manager.py`).
 
 2. **Running the Program**:
    - Open your terminal or command prompt.
    - Navigate to the directory where you saved the script.
    - Run the script by typing:
      ```sh
-     python cloud_storage.py
+     python database_manager.py
      ```
 
-   The script will automatically install Flask if it’s not already installed and set up the necessary directory for storing files.
+### Using the Program
 
-### Accessing the Web Interface
-
-3. **Opening the Web Application**:
-   - Once the script is running, open a web browser on your computer or any device connected to the same network.
-   - Go to the following URL:
+3. **Main Menu**:
+   - Once the program is running, you'll see a main menu with several options:
      ```
-     http://0.0.0.0:8080
+     1) Add Data
+     2) Edit Data
+     3) Search Data
+     4) See Database
+     5) Exit
      ```
-   - This will take you to the homepage of the local cloud storage system.
+   - Enter the number corresponding to the option you want to select and press Enter.
 
-### Using the Web Interface
+### Menu Options
 
-4. **Uploading Files**:
-   - On the homepage, you'll see a section titled "Upload New File".
-   - Click on the "Choose File" button to select a file from your device.
-   - After selecting the file, click the "Upload" button.
-   - The file will be uploaded to the local storage, and the page will refresh, showing the newly uploaded file in the list.
+4. **Add Data**:
+   - **Option 1**: Allows you to add new data to the database.
+     ```
+     Choose an option: 1
+     ```
+     - Enter the data you want to add when prompted.
+     - Example:
+       ```
+       Enter data to add: Sample data
+       Data added successfully.
+       ```
 
-5. **Viewing and Downloading Files**:
-   - The homepage lists all the files stored in the system, organized by file extension.
-   - To download a file, simply click on the file name link. The file will be downloaded to your device.
+5. **Edit Data**:
+   - **Option 2**: Allows you to edit existing data in the database.
+     ```
+     Choose an option: 2
+     ```
+     - If the database file does not exist or is empty, you’ll be notified.
+     - If there is existing data, it will be displayed, and you can make your edits.
+     - Type your new data line by line and finish with a single line containing 'END'.
+     - Example:
+       ```
+       Current data (edit as needed):
 
-6. **Deleting Files**:
-   - Next to each file, there's a "Delete" link.
-   - Click the "Delete" link to remove the file from the storage.
-   - The page will refresh, and the file will no longer be listed.
+       Sample data
 
-### File Organization
+       Enter your edits (finish with a single line containing 'END'):
+       Edited sample data
+       END
+       Data edited successfully.
+       ```
 
-7. **File Grouping**:
-   - Files are grouped by their extensions (e.g., all `.txt` files together, all `.jpg` files together).
-   - Each group is displayed in a sorted list for easy navigation.
+6. **Search Data**:
+   - **Option 3**: Allows you to search for specific terms in the database.
+     ```
+     Choose an option: 3
+     ```
+     - Enter the search term when prompted.
+     - The program will display all lines containing the search term.
+     - Example:
+       ```
+       Enter search term: sample
+       Matching data:
+       Edited sample data
+       ```
 
-### Important Notes
+7. **See Database**:
+   - **Option 4**: Displays all the data currently stored in the database.
+     ```
+     Choose an option: 4
+     ```
+     - If the database file does not exist or is empty, you’ll be notified.
+     - Otherwise, all the data will be displayed.
+     - Example:
+       ```
+       Edited sample data
+       ```
 
-- **Storage Location**:
-  - All files are stored in the directory `/storage/emulated/0/Cloud`. Make sure this path is accessible and writable.
-  - If this directory doesn’t exist, the program will create it automatically.
-
-- **Running the Server**:
-  - The server runs on `0.0.0.0:8080`, making it accessible from other devices on the same network. Ensure that your firewall settings allow access to this port if you encounter connectivity issues.
+8. **Exit**:
+   - **Option 5**: Exits the program.
+     ```
+     Choose an option: 5
+     ```
 
 ### Example Usage Scenario
 
-Imagine you have multiple devices at home, like a laptop, a smartphone, and a tablet. You can run this script on your laptop, which acts as the server. Then, from your smartphone or tablet, you can open the browser, navigate to the provided URL, and upload, download, or delete files as needed. This setup is particularly useful for quickly sharing files between devices without needing an external cloud service.
+Imagine you are managing a simple text database for storing notes or records. You can use this script to:
 
-By following these steps, you can effectively use this local cloud storage system to manage and access your files conveniently from any device within your local network.
+- **Add Data**: Quickly add new records to the database.
+- **Edit Data**: Modify existing records easily when updates are needed.
+- **Search Data**: Find specific records or notes using keywords.
+- **See Database**: View all records to review the stored information.
+
+This program provides a basic but effective way to manage text data, especially useful for simple record-keeping or note-taking tasks. You can run it on any device with Python installed and store your data in the specified text file (`/sdcard/database_data.txt`).
